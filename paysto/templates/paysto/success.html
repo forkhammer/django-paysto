@@ -1,0 +1,14 @@
+{% extends 'page-client-center.html' %}
+
+{% load main_tags %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block center %}
+    {% if payment %}
+        {% include 'main/client/payment/detail-ajax.html' %}
+    {% endif %}
+    <p>
+        <a href="{% url 'client:payment:history' %}" class="btn btn-flt3">Перейти в список заказов</a>
+    </p>
+{% endblock %}
